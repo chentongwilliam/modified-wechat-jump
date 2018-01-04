@@ -28,9 +28,10 @@ def jump(distance):
 def jump(distance):
     pos1 = np.random.uniform(10, 400)
     pos2 = np.random.uniform(0, 500)
-    press_time = distance * 2.99
+    pos = str(pos1) + ' ' + str(pos2) + ' ' + str(pos1) + ' '+ str(pos2) + ' '
+    press_time = distance * 2.99    #coefficient should be changed for different DPI
     press_time = int(press_time)
-    cmd = 'adb shell input swipe ' + str(pos1) + ' ' + str(pos2) + ' ' + str(pos1) + ' '+ str(pos2) + ' ' + str(press_time)
+    cmd = 'adb shell input swipe ' + pos + str(press_time)
     print (cmd)
     os.system(cmd)
 
